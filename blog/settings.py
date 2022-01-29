@@ -10,11 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+import dj_database_url
 from pathlib import Path
 
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
+    
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -25,9 +31,25 @@ SECRET_KEY = '95db8c11-afd4-4e07-bc35-0ab098744602'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["easyblog-pr-8124-pr-123.herokuapp.com"]
 
+if os.environ.get('ENV') == 'PRODUCTION':
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
+if os.environ.get('ENV') == 'PRODUCTION':
+# compression and caching support
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+if os.environ.get('ENV') == 'PRODUCTION':
+
+# DATABASES dictionary
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+    
 # Application definition
 
 INSTALLED_APPS = [
