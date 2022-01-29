@@ -1,24 +1,19 @@
 # python-easyblog based on Django blog tutorial
 See the tutorial series at this link: [dontrepeatyourself.org](https://dontrepeatyourself.org)
 
-Deployment method
+## Deployment method
 
-## Heroku Git
+### Heroku Git
 Use Heroku CLI
  
-GitHub
-Connected
- 
-Container Registry
-Use Heroku CLI
+> GitHub
+> Connected
+> App connected to GitHub
+> Deploy a GitHub branch
+> This will deploy the current state of the branch you specify below.
+> Choose a branch to deploy
 
-App connected to GitHub
-Deploy a GitHub branch
-This will deploy the current state of the branch you specify below.
-
-Choose a branch to deploy
-
-##  Install the Heroku CLI
+### Install the Heroku CLI
 Download and install the Heroku CLI.
 
 If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
@@ -38,7 +33,7 @@ $ git commit -am "make it better"
 $ git push heroku master
 ~~~
 
-## Install the Heroku CLI
+### Install the Heroku CLI
 Download and install the Heroku CLI.
 
 If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
