@@ -4,14 +4,13 @@ See the tutorial series at this link: [dontrepeatyourself.org](https://dontrepea
 ## Deployment method
 
 ### Heroku Git
-Use Heroku CLI
  
-> GitHub
-> Connected
-> App connected to GitHub
-> Deploy a GitHub branch
-> This will deploy the current state of the branch you specify below.
-> Choose a branch to deploy
+. GitHub
+. Connected
+. App connected to GitHub
+. Deploy a GitHub branch
+. This will deploy the current state of the branch you specify below.
+. Choose a branch to deploy
 
 ### Install the Heroku CLI
 Download and install the Heroku CLI.
