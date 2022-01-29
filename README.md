@@ -1,6 +1,5 @@
-# Django blog tutorial
+# python-easyblog based on Django blog tutorial
 See the tutorial series at this link: [dontrepeatyourself.org](https://dontrepeatyourself.org)
-# python-easyblog
 
 Deployment method
 
