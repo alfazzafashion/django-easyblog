@@ -349,21 +349,19 @@ Now run the server using the terminal:
 python manage.py runserver
 ~~~
 Now add a few Blogs via the admin site(“/admin“)
-
-Blog Admin
+[![Alt text](https://www.askpython.com/wp-content/uploads/2020/08/blog-admin-1024x762.png.webp)
 
 Now go to “/blogs” endpoint
+[![Alt text](https://www.askpython.com/wp-content/uploads/2020/08/blogs-1024x762.png.webp)
 
-Blogs
 Now go to any of the blogs, say Django Hello World
+[![Alt text](https://www.askpython.com/wp-content/uploads/2020/08/Blog-1-1024x708.png.webp)
 
-
-Blog 1
 Add a comment and hit submit, the comment will appear below
+[![Alt text](https://www.askpython.com/wp-content/uploads/2020/08/blog-1-with-comment-1024x744.png.webp)
 
-Blog 1 With Comment
 Note that when you go to any other blog, let’s say the Django Views one, you won’t see the above comment since it is only for the Django Hello World Blog.
+[![Alt text](https://www.askpython.com/wp-content/uploads/2020/08/blog-2-1024x744.png.webp)
 
-Blog 2
-Conclusion
-That’s it, coders, this was all about the Django Blog application. Try creating your own Blog app with additional features like user authentication. Do check out the Django User Authentication article for help.
+## Conclusion
+That’s it, coders, this was all about the Django Blog application. Try creating your own Blog app with additional features like user authentication. Do check out the Django User Authentication [article](https://www.askpython.com/django/django-blog-app) for help.
