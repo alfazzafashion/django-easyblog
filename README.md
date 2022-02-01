@@ -1,7 +1,7 @@
 # Django Blog App
 Django Blog App – Add Bloging and Commenting to Your Django App
 
-## Pre-requisites for Building a Django Blog
+Pre-requisites for Building a Django Blog
 In this application, we will require knowledge of the following:
 
 * Django Models
