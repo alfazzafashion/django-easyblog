@@ -1,7 +1,5 @@
-# django-easyblog
+# Django Blog App
 Django Blog App – Add Bloging and Commenting to Your Django App
-
-## Django Blog App
 
 ## Pre-requisites for Building a Django Blog
 In this application, we will require knowledge of the following:
@@ -16,7 +14,7 @@ In this application, we will require knowledge of the following:
 Building our own Django Blog App
 Now that we’re all set with the required knowledge, let’s get onto building your first Django blog app today.
 
-1. Creating a Django Project and App
+### Creating a Django Project and App
 The first step is to set-up a new Django project for the application. Hence in the terminal run:
 ~~~
 django-admin startproject <project_name>
@@ -29,7 +27,7 @@ django-admin startapp blogapp
 Register the Django app in the settings.py
 
 ### INSTALLED_APPS
-2. Including the App URLs to the Project URLs file
+
 Create a new urls.py file in the App and then link it to the project urls.py file. Hence, in project/urls.py, add the code:
 
 ~~~
@@ -49,8 +47,7 @@ admin.site.register(BlogModel)
 admin.site.register(CommentModel)
 ~~~
 
-3. Coding the Django Model
-
+### Coding the Django Model
 Hence in blogapp/models.py, create two models – BlogModel and CommentModel with the following fields
 ~~~
 from django.db import models
@@ -72,9 +69,8 @@ class CommentModel(models.Model):
 ~~~
 Note that blog field in CommentModel is linked to the BlogModel since each individual blog page will show only the comments on that blog.
 
-4. Coding the Django Forms
+### Coding the Django Forms
 We also need Two Forms:
-
 Comment Form to write comments
 A Search Form to search for Blogs
 Hence, create a forms.py file in blogapp and add the below code in it:
@@ -90,12 +86,14 @@ class CommentForm(forms.Form):
 class SearchForm(forms.Form):
     title = forms.CharField(max_length=20)
 ~~~
-5. Coding the Django Views
+
+### Coding the Django Views
 Again we need Two Views:
 
 ListView: To display the list of Blogs and the search form
 Detail View: To display individual Blog, the CommentForm and the previously submitted comments
 Hence add the following List View and the Detail View into blogapp/views.py:
+
 ~~~
 from .models import BlogModel,CommentModel
 from .forms import SearchForm,CommentForm
@@ -116,7 +114,6 @@ def BlogListView(request):
             'form':form,
         }
     return render(request,'blogapp/listview.html',context)
- 
  
 def BlogDetailView(request,_id):
     try:
@@ -143,15 +140,16 @@ def BlogDetailView(request,_id):
         }
     return render(request,'blogapp/detailview.html',context)
 ~~~
-The URL paths for the Views will be:
 
+The URL paths for the Views will be:
 ~~~
 path('blogs/', BlogListView, name='blogs'),
 path('blog/<int:_id>', BlogDetailView, name='blog'),
 ~~~
+
 Add the above code in blogapp/urls.py
 
-6. Coding the Django Templates
+### Coding the Django Templates
 To display the contents, we again need two templates, one for each View. Hence:
 
 Create a templates folder in the App.
@@ -173,7 +171,8 @@ listview.html file
 <hr/>
 {% endfor %}
 ~~~
-2. detailview.html file
+
+### detailview.html file
 ~~~
 <h3>Title:</h3><p>{{data.blog_title}}</p><br>
 <h3>Blog</h3>
@@ -181,8 +180,7 @@ listview.html file
 <hr/>
  
 <a href = "{% url 'blogs' %}">Go Back</a>
- 
- 
+  
 <form method="post">
     {%csrf_token %}
     <H2> Comment Here</H2>
@@ -217,7 +215,8 @@ class CommentModel(models.Model):
     def __str__(self):
         return f"Comment by Name: {self.your_name}"
 ~~~
-2. forms.py
+
+### forms.py
 ~~~
 from django import forms
  
@@ -233,7 +232,8 @@ class CommentForm(forms.Form):
 class SearchForm(forms.Form):
     title = forms.CharField(max_length=20)
 ~~~
-3. views.py
+
+### views.py
 ~~~
 from .models import BlogModel,CommentModel
 from .forms import SearchForm,CommentForm
@@ -281,7 +281,8 @@ def BlogDetailView(request,_id):
         }
     return render(request,'blogapp/detailview.html',context)
 ~~~
-4. listview.html
+
+### listview.html
 ~~~
 <html>
 <body>
@@ -300,8 +301,8 @@ def BlogDetailView(request,_id):
 </html>
 </body>
 ~~~
-5. detailview.html
 
+### detailview.html
 ~~~
 <html>
 <body>
@@ -326,7 +327,8 @@ def BlogDetailView(request,_id):
 </html>
 </body>
 ~~~
-6. blogapp/urls.py
+
+### blogapp/urls.py
 ~~~
 from django.contrib import admin
 from django.urls import path
@@ -338,7 +340,7 @@ urlpatterns = [
 ]
 ~~~
 
-Implementation of the Project
+### Implementation of the Project
 ~~~
 python manage.py migrate
 python manage.py makemigrations
