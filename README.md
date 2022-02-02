@@ -342,13 +342,13 @@ urlpatterns = [
 
 ### Implementation of the Project
 ~~~
-python manage.py migrate
-python manage.py makemigrations
-python manage.py migrate
+python3 manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ~~~
 Now run the server using the terminal:
 ~~~
-python manage.py runserver
+python3 manage.py runserver
 ~~~
 
 Now add a few Blogs via the admin site(“/admin“)
